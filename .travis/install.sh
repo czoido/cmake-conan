@@ -22,4 +22,5 @@ fi
 pip install conan --upgrade
 
 conan user
+conan profile new default --detect
 pip install nose
