@@ -4,7 +4,6 @@ linux: &linux
    language: python
    sudo: required
    python: "3.7"
-
 osx: &osx
    os: osx
    language: generic
@@ -12,8 +11,9 @@ osx: &osx
 matrix:
    include:
       - <<: *linux
+        env: CONAN_COMPILER=gcc CONAN_COMPILER_VERSION=7
       - <<: *osx
-        env: CONAN_APPLE_CLANG_VERSIONS=11.0 
+        osx_image: xcode11.2
 
 install:
   - chmod +x .travis/install.sh
